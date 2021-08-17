@@ -14,7 +14,8 @@ limitations under the License.
 */
 
 using System.Collections.Generic;
-
+using System.Collections;
+using UnityEngine;
 namespace RosSharp.RosBridgeClient
 {
     public class JointStateSubscriber : UnitySubscriber<MessageTypes.Sensor.JointState>
@@ -30,6 +31,7 @@ namespace RosSharp.RosBridgeClient
                 index = JointNames.IndexOf(message.name[i]);
                 if (index != -1)
                     JointStateWriters[index].Write((float) message.position[i]);
+
             }
         }
     }
