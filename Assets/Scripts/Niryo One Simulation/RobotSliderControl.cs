@@ -8,11 +8,11 @@ public class RobotSliderControl : MonoBehaviour
     public GameObject simulationRobot;
     public List<JointStateWriter> JointStateWriters;
     public List<Slider> controlSliders;
-    private boolean simCounter = true;
+    private bool simCounter = false;
     // Start is called before the first frame update
     void Start()
     {
-        
+        simulationRobot.gameObject.SetActive(false);
     }
 
     // Update is called once per frame
@@ -26,14 +26,15 @@ public class RobotSliderControl : MonoBehaviour
     
     public void RobotAppearance(){
         if(simCounter){
-            
+            simulationRobot.gameObject.SetActive(false);
+            simCounter = false;
+
         }
-        simulationRobot.gameObject.SetActive(false);
-        simulationRobot
-    }
-    
-    public void RobotAppear(){
-        simulationRobot.gameObject.SetActive(true);
+        else{
+            simulationRobot.gameObject.SetActive(true);
+            simCounter = true;
+        }
+        
     }
 
 }
