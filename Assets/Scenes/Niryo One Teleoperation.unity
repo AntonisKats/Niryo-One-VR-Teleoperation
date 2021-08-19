@@ -2286,7 +2286,7 @@ GameObject:
   - component: {fileID: 181750102}
   - component: {fileID: 181750101}
   m_Layer: 0
-  m_Name: world_sim
+  m_Name: world_sim_plan
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -8528,7 +8528,7 @@ GameObject:
   - component: {fileID: 618843026}
   - component: {fileID: 618843025}
   m_Layer: 0
-  m_Name: hand_link_6_sim
+  m_Name: hand_link_6_sim_plan
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -9226,7 +9226,7 @@ GameObject:
   - component: {fileID: 703274890}
   - component: {fileID: 703274889}
   m_Layer: 0
-  m_Name: forearm_link_4_sim
+  m_Name: forearm_link_4_sim_plan
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -9994,7 +9994,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &763613974
 MonoBehaviour:
@@ -10069,6 +10069,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Topic: /move_group/display_planned_path
   TimeStep: 0
+  JointWriters:
+  - {fileID: 1379500166}
+  - {fileID: 1135487637}
+  - {fileID: 1041674131}
+  - {fileID: 703274889}
+  - {fileID: 2140308986}
+  - {fileID: 618843025}
 --- !u!1001 &766670173
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -12426,7 +12433,7 @@ GameObject:
   - component: {fileID: 952500140}
   - component: {fileID: 952500139}
   m_Layer: 0
-  m_Name: base_link_0_sim
+  m_Name: base_link_0_sim_plan
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -13325,7 +13332,7 @@ GameObject:
   - component: {fileID: 1041674132}
   - component: {fileID: 1041674131}
   m_Layer: 0
-  m_Name: elbow_link_3_sim
+  m_Name: elbow_link_3_sim_plan
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -14271,7 +14278,7 @@ GameObject:
   - component: {fileID: 1135487638}
   - component: {fileID: 1135487637}
   m_Layer: 0
-  m_Name: arm_link_2_sim
+  m_Name: arm_link_2_sim_plan
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -15853,7 +15860,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1314621109}
   - component: {fileID: 1314621108}
-  - component: {fileID: 1314621107}
   m_Layer: 0
   m_Name: niryo_one simulation plan
   m_TagString: Untagged
@@ -15861,22 +15867,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1314621107
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1314621105}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ff98778ae051cfd40a6e4effdf851ebd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  SecondsTimeout: 10
-  Serializer: 0
-  protocol: 0
-  RosBridgeServerUrl: ws://192.168.0.1:9090
 --- !u!114 &1314621108
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15898,13 +15888,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1314621105}
   m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -1, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1631359234}
   - {fileID: 181750100}
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
 --- !u!1 &1317094299
 GameObject:
@@ -16735,7 +16725,7 @@ GameObject:
   - component: {fileID: 1379500167}
   - component: {fileID: 1379500166}
   m_Layer: 0
-  m_Name: shoulder_link_1_sim
+  m_Name: shoulder_link_1_sim_plan
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -24472,7 +24462,7 @@ GameObject:
   - component: {fileID: 2140308987}
   - component: {fileID: 2140308986}
   m_Layer: 0
-  m_Name: wrist_link_5_sim
+  m_Name: wrist_link_5_sim_plan
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
