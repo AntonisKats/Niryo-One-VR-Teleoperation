@@ -10,15 +10,12 @@ namespace RosSharp.RosBridgeClient
 {
     public class MoveItPlannedPathSubscriber : UnitySubscriber<MessageTypes.Moveit.DisplayTrajectory>
     {
-        private int jointNum = 6;
-        private IEnumerator coroutine;
-        private float displayTimeStep = 0.1f;
-        private bool isMessageReceived;
+        public bool isMessageReceived;
         public JointTrajectoryPoint[] planPoints;
-        public List<JointStateWriter> JointWriters;
+        //private IEnumerator coroutine;
 
         //public JointTrajectoryPoint[] planPoints;
-
+        public int planNumber = 0;
         private void Update()
         {
             if (isMessageReceived)
@@ -27,32 +24,16 @@ namespace RosSharp.RosBridgeClient
 
         protected override void ReceiveMessage(MessageTypes.Moveit.DisplayTrajectory message)
         {
-
-            Debug.Log("New Planned Trajectory");
             planPoints = message.trajectory[0].joint_trajectory.points;
+            planNumber++;
             isMessageReceived = true;
-
-            
-            //DisplayTrajectory();
         }
 
         private void ProcessMessage()
         {
-            coroutine = DisplayTrajectory(planPoints);
-            StartCoroutine(coroutine);
             isMessageReceived = false;
         }
 
-        private IEnumerator DisplayTrajectory(JointTrajectoryPoint[] points)
-        {
-             for (int i = 0; i < points.Length - 1; i++){
-                for(int j = 0; j < jointNum; j++ ){
-                    JointWriters[j].Write((float)points[i].positions[j]);
-                }
-                yield return new WaitForSeconds(displayTimeStep);
-            }
-            print("Coroutine ended.");
-        }
     } 
 }
 

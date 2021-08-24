@@ -7,7 +7,7 @@ public class CameraControl : MonoBehaviour
     public float speedH = 1.00001f;
     
     private float yaw = 0.0f;
-    private float mouseClickedDistance = 0.0f;
+    //private float mouseClickedDistance = 0.0f;
     private float mouseXPosition;
     private bool alreadyClicked = false;
     private bool controlCamera = false;
@@ -38,16 +38,16 @@ public class CameraControl : MonoBehaviour
                 if(alreadyClicked == false){
                     alreadyClicked = true;
                     mouseFirstClickPos = mousePos.x;
-                    print("First Click:");
-                    print(mouseFirstClickPos);
+                    //print("First Click:");
+                    //print(mouseFirstClickPos);
                 }
                 
                 
             }
             if(Input.GetMouseButtonUp(1)){
-                mouseClickedDistance = 0.0f;
+                //mouseClickedDistance = 0.0f;
                 alreadyClicked = false;
-                print("Up Button!");
+                //print("Up Button!");
             }
             if(alreadyClicked == true){
                 mouseDistance = mousePos.x - mouseFirstClickPos;

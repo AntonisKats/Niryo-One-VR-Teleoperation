@@ -1585,6 +1585,7 @@ GameObject:
   - component: {fileID: 124769385}
   - component: {fileID: 124769384}
   - component: {fileID: 124769383}
+  - component: {fileID: 124769388}
   m_Layer: 0
   m_Name: hand_link_6
   m_TagString: Untagged
@@ -1729,6 +1730,18 @@ MonoBehaviour:
   _jointType: 2
   EffortLimit: 1000
   VelocityLimit: 1000
+--- !u!114 &124769388
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 124769379}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3122a7138a008c14f83e8b3df6286693, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &125549447
 GameObject:
   m_ObjectHideFlags: 0
@@ -3383,7 +3396,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -401.96997, y: 150}
+  m_AnchoredPosition: {x: 200, y: 80}
   m_SizeDelta: {x: 160, y: 20}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &266520617
@@ -4636,6 +4649,7 @@ GameObject:
   - component: {fileID: 363071795}
   - component: {fileID: 363071794}
   - component: {fileID: 363071793}
+  - component: {fileID: 363071798}
   m_Layer: 0
   m_Name: wrist_link_5
   m_TagString: Untagged
@@ -4780,6 +4794,18 @@ MonoBehaviour:
   _jointType: 2
   EffortLimit: 1000
   VelocityLimit: 1000
+--- !u!114 &363071798
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 363071789}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3122a7138a008c14f83e8b3df6286693, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &368508170
 GameObject:
   m_ObjectHideFlags: 0
@@ -6105,9 +6131,13 @@ PrefabInstance:
       value: shoulder_link
       objectReference: {fileID: 0}
     - target: {fileID: 5790575196777360314, guid: 8f0eaae67d66b3c66b27b9df46c857a6, type: 3}
+      propertyPath: m_Materials.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5790575196777360314, guid: 8f0eaae67d66b3c66b27b9df46c857a6, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: -2600203907067110892, guid: 84dfa071e4c73e5b0b302936fca31480, type: 3}
+      objectReference: {fileID: 9215963968028889688, guid: 84dfa071e4c73e5b0b302936fca31480, type: 3}
     - target: {fileID: 9036411226420098089, guid: 8f0eaae67d66b3c66b27b9df46c857a6, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
@@ -6681,6 +6711,7 @@ GameObject:
   - component: {fileID: 504087412}
   - component: {fileID: 504087411}
   - component: {fileID: 504087410}
+  - component: {fileID: 504087415}
   m_Layer: 0
   m_Name: arm_link_2
   m_TagString: Untagged
@@ -6825,6 +6856,18 @@ MonoBehaviour:
   _jointType: 2
   EffortLimit: 1000
   VelocityLimit: 1000
+--- !u!114 &504087415
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 504087406}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3122a7138a008c14f83e8b3df6286693, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &506673852
 GameObject:
   m_ObjectHideFlags: 0
@@ -9386,6 +9429,7 @@ GameObject:
   - component: {fileID: 702842566}
   - component: {fileID: 702842565}
   - component: {fileID: 702842564}
+  - component: {fileID: 702842568}
   m_Layer: 0
   m_Name: End Effector Goal
   m_TagString: Untagged
@@ -9401,8 +9445,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 702842562}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.5, z: 0.5}
-  m_LocalScale: {x: 0.1, y: 0.1, z: 0.1}
+  m_LocalPosition: {x: 0, y: 0.5, z: 0}
+  m_LocalScale: {x: 0.05, y: 0.05, z: 0.05}
   m_Children: []
   m_Father: {fileID: 1957686614}
   m_RootOrder: 2
@@ -9482,6 +9526,18 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 702842562}
   m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &702842568
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 702842562}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6bb39f89398903c90a2102924ae7c730, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &703274886
 GameObject:
   m_ObjectHideFlags: 0
@@ -10248,6 +10304,7 @@ GameObject:
   - component: {fileID: 763613975}
   - component: {fileID: 763613976}
   - component: {fileID: 763613977}
+  - component: {fileID: 763613978}
   m_Layer: 0
   m_Name: ROS Connector
   m_TagString: Untagged
@@ -10342,13 +10399,28 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Topic: /move_group/display_planned_path
   TimeStep: 0
-  JointWriters:
-  - {fileID: 1379500166}
-  - {fileID: 1135487637}
-  - {fileID: 1041674131}
-  - {fileID: 703274889}
-  - {fileID: 2140308986}
-  - {fileID: 618843025}
+  isMessageReceived: 0
+  planNumber: 0
+--- !u!114 &763613978
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 763613972}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1c78e2f966eae5d48868012a6143fa27, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Topic: /fk_plan_joints
+  slider:
+  - {fileID: 1465180893}
+  - {fileID: 483420781}
+  - {fileID: 1334082895}
+  - {fileID: 589561067}
+  - {fileID: 442300082}
+  - {fileID: 682386407}
 --- !u!1001 &766670173
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -10893,6 +10965,7 @@ GameObject:
   - component: {fileID: 821078587}
   - component: {fileID: 821078586}
   - component: {fileID: 821078585}
+  - component: {fileID: 821078590}
   m_Layer: 0
   m_Name: shoulder_link_1
   m_TagString: Untagged
@@ -11037,6 +11110,18 @@ MonoBehaviour:
   _jointType: 2
   EffortLimit: 1000
   VelocityLimit: 1000
+--- !u!114 &821078590
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 821078581}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3122a7138a008c14f83e8b3df6286693, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &827377673
 GameObject:
   m_ObjectHideFlags: 0
@@ -12571,7 +12656,20 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 928349701}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 763613978}
+        m_TargetAssemblyTypeName: RosSharp.RosBridgeClient.ForwardKinematicsPublisher,
+          Assembly-CSharp
+        m_MethodName: SendJoints
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &928349701
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -16430,6 +16528,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   simulationRobot: {fileID: 1314621105}
+  pathSubscriber: {fileID: 763613977}
+  JointWriters:
+  - {fileID: 1379500166}
+  - {fileID: 1135487637}
+  - {fileID: 1041674131}
+  - {fileID: 703274889}
+  - {fileID: 2140308986}
+  - {fileID: 618843025}
+  JointReaders:
+  - {fileID: 821078590}
+  - {fileID: 504087415}
+  - {fileID: 1627366197}
+  - {fileID: 2135778445}
+  - {fileID: 363071798}
+  - {fileID: 124769388}
 --- !u!114 &1314621108
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -20263,6 +20376,7 @@ GameObject:
   - component: {fileID: 1627366194}
   - component: {fileID: 1627366193}
   - component: {fileID: 1627366192}
+  - component: {fileID: 1627366197}
   m_Layer: 0
   m_Name: elbow_link_3
   m_TagString: Untagged
@@ -20407,6 +20521,18 @@ MonoBehaviour:
   _jointType: 2
   EffortLimit: 1000
   VelocityLimit: 1000
+--- !u!114 &1627366197
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1627366188}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3122a7138a008c14f83e8b3df6286693, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1631359233
 GameObject:
   m_ObjectHideFlags: 0
@@ -23320,7 +23446,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -401.96997, y: 100}
+  m_AnchoredPosition: {x: 200, y: 100}
   m_SizeDelta: {x: 160, y: 20}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1940266132
@@ -24859,6 +24985,7 @@ GameObject:
   - component: {fileID: 2135778442}
   - component: {fileID: 2135778441}
   - component: {fileID: 2135778440}
+  - component: {fileID: 2135778445}
   m_Layer: 0
   m_Name: forearm_link_4
   m_TagString: Untagged
@@ -25003,6 +25130,18 @@ MonoBehaviour:
   _jointType: 2
   EffortLimit: 1000
   VelocityLimit: 1000
+--- !u!114 &2135778445
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2135778436}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3122a7138a008c14f83e8b3df6286693, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2135903422
 GameObject:
   m_ObjectHideFlags: 0
@@ -25481,7 +25620,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 224421765572603708, guid: 271ac83bd0e2add4e93209a4adb073ca, type: 3}
       propertyPath: m_SizeDelta.y
-      value: -123
+      value: -100
       objectReference: {fileID: 0}
     - target: {fileID: 224421765572603708, guid: 271ac83bd0e2add4e93209a4adb073ca, type: 3}
       propertyPath: m_LocalScale.x
@@ -25493,7 +25632,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 224421765572603708, guid: 271ac83bd0e2add4e93209a4adb073ca, type: 3}
       propertyPath: m_LocalScale.z
-      value: 0.5
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 224421765572603708, guid: 271ac83bd0e2add4e93209a4adb073ca, type: 3}
       propertyPath: m_LocalPosition.x
@@ -25529,7 +25668,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 224421765572603708, guid: 271ac83bd0e2add4e93209a4adb073ca, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -38.5
+      value: -50
       objectReference: {fileID: 0}
     - target: {fileID: 224421765572603708, guid: 271ac83bd0e2add4e93209a4adb073ca, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
