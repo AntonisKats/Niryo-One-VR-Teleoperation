@@ -38,9 +38,9 @@ namespace RosSharp.RosBridgeClient
             message.orientation.y = 0;
             message.orientation.z = 0;
             message.orientation.w = 1;
-            UnityEngine.Debug.Log(message.position.x);
-            UnityEngine.Debug.Log(message.position.y);
-            UnityEngine.Debug.Log(message.position.z);
+            //UnityEngine.Debug.Log(message.position.x);
+            //UnityEngine.Debug.Log(message.position.y);
+            //UnityEngine.Debug.Log(message.position.z);
             Publish(message);
         }
 
