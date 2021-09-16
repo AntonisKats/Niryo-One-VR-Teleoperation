@@ -11,7 +11,7 @@ public class SliderInputFieldUpdate : MonoBehaviour
     void Start()
     {
         inputField.text = slider.value.ToString();  
-        Grapher.Log(slider.value, "myName");
+        //Grapher.Log(slider.value, "myName");
     }
 
     // Update is called once per frame
