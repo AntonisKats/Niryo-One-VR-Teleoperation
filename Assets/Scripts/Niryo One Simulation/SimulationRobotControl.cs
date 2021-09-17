@@ -8,33 +8,52 @@ public class SimulationRobotControl : MonoBehaviour
     public GameObject simulationRobot;
     public List<JointStateWriter> JointStateWriters;
     public List<Slider> controlSliders;
-    private bool simCounter = false;
+    public Toggle jointControlToggle;
+    public Toggle viewSimRobotToggle;
     // Start is called before the first frame update
     void Start()
     {
-        simulationRobot.gameObject.SetActive(false);
+        HideChildren();
     }
 
     // Update is called once per frame
     void Update()
     {
-        for (int i = 0; i < JointStateWriters.Count; i++)
-        {
-            JointStateWriters[i].Write(controlSliders[i].value * Mathf.Deg2Rad);
+        if(jointControlToggle.isOn){
+            for (int i = 0; i < JointStateWriters.Count; i++){
+                JointStateWriters[i].Write(controlSliders[i].value * Mathf.Deg2Rad);
+            }
         }
+
+        if(viewSimRobotToggle.isOn)ShowChildren();
+        else HideChildren();
+
+
+        
     }
     
-    public void RobotAppearance(){
-        if(simCounter){
-            simulationRobot.gameObject.SetActive(false);
-            simCounter = false;
 
+    void Show() {
+        GetComponent<Renderer>().enabled = true;
+    }
+    void Hide() {
+        GetComponent<Renderer>().enabled = false;
+    }
+    void HideChildren()
+    {
+        Renderer[] lChildRenderers=gameObject.GetComponentsInChildren<Renderer>();
+        foreach ( Renderer lRenderer in lChildRenderers)
+        {
+            lRenderer.enabled=false;
         }
-        else{
-            simulationRobot.gameObject.SetActive(true);
-            simCounter = true;
+    }
+    void ShowChildren()
+    {
+        Renderer[] lChildRenderers=gameObject.GetComponentsInChildren<Renderer>();
+        foreach ( Renderer lRenderer in lChildRenderers)
+        {
+            lRenderer.enabled=true;
         }
-        
     }
 
 }

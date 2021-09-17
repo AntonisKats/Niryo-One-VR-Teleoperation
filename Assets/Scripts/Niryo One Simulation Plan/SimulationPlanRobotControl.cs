@@ -8,7 +8,7 @@ using RosSharp.RosBridgeClient.MessageTypes.Sensor;
 using RosSharp.RosBridgeClient.MessageTypes.Moveit;
 public class SimulationPlanRobotControl : MonoBehaviour
 {
-    public GameObject simulationRobot;
+    public GameObject simulationPlanRobot;
     public MoveItPlannedPathSubscriber pathSubscriber;
     public List<JointStateWriter> JointWriters;
     public List<JointStateReader> JointReaders;
@@ -20,6 +20,7 @@ public class SimulationPlanRobotControl : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        HideChildren();
     }
 
     // Update is called once per frame
@@ -30,7 +31,9 @@ public class SimulationPlanRobotControl : MonoBehaviour
 
     void FixedUpdate()
     {
-        //Debug.Log("Fixed");
+        //Debug.Log(pathSubscriber.planNumber);
+        //Debug.Log(planExecutedNum);
+        
         if(pathSubscriber.planNumber != planExecutedNum){
             coroutine = DisplayTrajectory(pathSubscriber.planPoints);
             StartCoroutine(coroutine);

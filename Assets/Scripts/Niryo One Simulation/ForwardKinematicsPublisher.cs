@@ -9,6 +9,7 @@ namespace RosSharp.RosBridgeClient
     {
         private MessageTypes.Sensor.JointState message;
         public List<Slider> slider;
+        public Toggle jointControlToggle;
         protected override void Start()
         {
             base.Start();
@@ -23,10 +24,13 @@ namespace RosSharp.RosBridgeClient
         }
         public void SendJoints()
         {
-            for(int i=0; i < slider.Count; i++){
+            if(jointControlToggle.isOn){
+                for(int i=0; i < slider.Count; i++){
                 message.position[i] = slider[i].value * Mathf.Deg2Rad;
+                }
+                Publish(message);
             }
-            Publish(message);
+            
         }
 
     }

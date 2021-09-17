@@ -1,12 +1,13 @@
 using System.Collections.Generic;
 using RosSharp.RosBridgeClient.MessageTypes.Geometry;
-
+using UnityEngine.UI;
 
 namespace RosSharp.RosBridgeClient
 {
     public class IkPoseGoalPublisher : UnityPublisher<MessageTypes.Geometry.Pose>
     {
-        public UnityEngine.Transform poseTransform;
+        public Toggle endEffectorControlToggle;
+        public List<InputField> endEffectorFieldList;
         private MessageTypes.Geometry.Pose message;    
         protected override void Start()
         {
@@ -16,7 +17,7 @@ namespace RosSharp.RosBridgeClient
 
         private void FixedUpdate()
         {
-            UpdateMessage();
+            //UpdateMessage();
         }
 
         private void InitializeMessage()
@@ -28,20 +29,20 @@ namespace RosSharp.RosBridgeClient
             };
         }
 
-        private void UpdateMessage()
-        {
-            message.position.x = poseTransform.position.Unity2Ros().x;
-            message.position.y = poseTransform.position.Unity2Ros().y;
-            message.position.z = poseTransform.position.Unity2Ros().z;
+        public void SendPoseGoal(){
 
-            message.orientation.x = 0;
-            message.orientation.y = 0;
-            message.orientation.z = 0;
-            message.orientation.w = 1;
-            //UnityEngine.Debug.Log(message.position.x);
-            //UnityEngine.Debug.Log(message.position.y);
-            //UnityEngine.Debug.Log(message.position.z);
-            Publish(message);
+            if(endEffectorControlToggle.isOn){
+                message.position.x = float.Parse(endEffectorFieldList[0].text);
+                message.position.y = float.Parse(endEffectorFieldList[1].text);
+                message.position.z = float.Parse(endEffectorFieldList[2].text);
+
+                message.orientation.x = 0;
+                message.orientation.y = 0.707;
+                message.orientation.z = 0;
+                message.orientation.w = 0.707;
+                Publish(message);
+            }
+            
         }
 
         // private void UpdateJointState(int i)

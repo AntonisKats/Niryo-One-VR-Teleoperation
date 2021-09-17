@@ -27,6 +27,7 @@ public class SliderInputFieldUpdate : MonoBehaviour
     }
 
     public void SliderdUpdate(){
+        Debug.Log("Update slider value.");
         slider.value = float.Parse(inputField.text);  
     }
 

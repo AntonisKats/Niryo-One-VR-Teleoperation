@@ -10,12 +10,13 @@ namespace RosSharp.RosBridgeClient
 {
     public class MoveItPlannedPathSubscriber : UnitySubscriber<MessageTypes.Moveit.DisplayTrajectory>
     {
-        public bool isMessageReceived;
+        private bool isMessageReceived;
         public JointTrajectoryPoint[] planPoints;
         //private IEnumerator coroutine;
 
         //public JointTrajectoryPoint[] planPoints;
         public int planNumber = 0;
+
         private void Update()
         {
             if (isMessageReceived)

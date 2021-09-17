@@ -1,6 +1,6 @@
 using System.Collections.Generic;
 using RosSharp.RosBridgeClient.MessageTypes.Std;
-
+using UnityEngine;
 
 namespace RosSharp.RosBridgeClient
 {
@@ -29,6 +29,8 @@ namespace RosSharp.RosBridgeClient
         }
 
         public void ExecuteTrajectory(){
+            Debug.Log("Execution Command Sent");
+            message.data = true;
             Publish(message);
         }
 
