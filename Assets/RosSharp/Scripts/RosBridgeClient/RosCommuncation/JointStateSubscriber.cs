@@ -16,22 +16,28 @@ limitations under the License.
 using System.Collections.Generic;
 using System.Collections;
 using UnityEngine;
+using UnityEngine.UI;
 namespace RosSharp.RosBridgeClient
 {
     public class JointStateSubscriber : UnitySubscriber<MessageTypes.Sensor.JointState>
     {
         public List<string> JointNames;
         public List<JointStateWriter> JointStateWriters;
-
+        public List<Text> jointTexts; 
         protected override void ReceiveMessage(MessageTypes.Sensor.JointState message)
         {
+            for(int i=0; i<jointTexts.Count;i++){
+                jointTexts[i].text = "Joint "+(i+1).ToString()+":"+ Mathf.RoundToInt((float)message.position[i]);;
+            }
             int index;
             for (int i = 0; i < message.name.Length; i++)
             {
                 index = JointNames.IndexOf(message.name[i]);
-                if (index != -1)
+                if (index != -1){
                     JointStateWriters[index].Write((float) message.position[i]);
-
+                    
+                }
+                    
             }
         }
     }
