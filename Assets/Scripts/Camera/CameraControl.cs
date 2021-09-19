@@ -20,17 +20,26 @@ public class CameraControl : MonoBehaviour
     private float cameraRadius;
     private float startCameraZ;
     private float startCameraX;
+    private float startXAngle;
+
+    private float minFov = 15f;
+    private float maxFov = 90f;
+    private float fov ;
+    private float sensitivity = 10f;
     // Start is called before the first frame update
     void Start()
     {
         startCameraX = transform.position.x;
         startCameraZ = transform.position.z;
         cameraRadius = Math.Abs(transform.position.z);
+        startXAngle = transform.eulerAngles.x;
+        Debug.Log(transform.rotation);
     }
 
     // Update is called once per frame
     void Update()
     {
+        ZoomManager();
         mousePos = Input.mousePosition;
         if(Input.GetMouseButtonDown(0))controlCamera = true;
 
@@ -55,16 +64,20 @@ public class CameraControl : MonoBehaviour
                 mouseDistance = mousePos.x - mouseFirstClickPos;
                 //print(mouseDistance);
 
+
+                
                 // Set angle
                 yaw = mouseDistance - transform.rotation.y ;
                 yaw = yaw / 2.0f;
-                transform.rotation =  Quaternion.Euler(0.0f,yaw,0.0f);
+                
+                transform.rotation =  Quaternion.Euler(startXAngle,yaw,0.0f);
 
                 //Set position
                 cameraZ = - cameraRadius * Mathf.Cos(-yaw*Mathf.Deg2Rad);
                 cameraX = cameraRadius * Mathf.Sin(-yaw*Mathf.Deg2Rad);
                 transform.position = new Vector3(cameraX,transform.position.y,cameraZ);
 
+                
                 
             }
 
@@ -74,5 +87,12 @@ public class CameraControl : MonoBehaviour
     }
     void FixedUpdate()
     {
+    }
+
+    void ZoomManager(){
+        fov = Camera.main.fieldOfView;
+        fov += Input.GetAxis("Mouse ScrollWheel") * sensitivity;
+        fov = Mathf.Clamp(fov, minFov, maxFov);
+        Camera.main.fieldOfView = fov;
     }
 }

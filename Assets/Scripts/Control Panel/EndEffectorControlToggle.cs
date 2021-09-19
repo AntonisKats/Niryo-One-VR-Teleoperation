@@ -24,10 +24,10 @@ public class EndEffectorControlToggle : MonoBehaviour
     }
 
     void DisablePanel(){
-        for(int i=0; i<3; i++)inputFieldList[i].interactable = false;
+        for(int i=0; i<inputFieldList.Count; i++)inputFieldList[i].interactable = false;
     }
 
     void EnablePanel(){
-        for(int i=0; i<3; i++)inputFieldList[i].interactable = true;
+        for(int i=0; i<inputFieldList.Count; i++)inputFieldList[i].interactable = true;
     }
 }

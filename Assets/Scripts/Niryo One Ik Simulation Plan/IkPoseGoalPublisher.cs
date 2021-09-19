@@ -9,6 +9,7 @@ namespace RosSharp.RosBridgeClient
         public Toggle endEffectorControlToggle;
         public List<InputField> endEffectorFieldList;
         private MessageTypes.Geometry.Pose message;    
+        private float xRot,yRot,zRot;
         protected override void Start()
         {
             base.Start();
@@ -35,29 +36,18 @@ namespace RosSharp.RosBridgeClient
                 message.position.x = float.Parse(endEffectorFieldList[0].text);
                 message.position.y = float.Parse(endEffectorFieldList[1].text);
                 message.position.z = float.Parse(endEffectorFieldList[2].text);
-
-                message.orientation.x = 0;
-                message.orientation.y = 0.707;
-                message.orientation.z = 0;
-                message.orientation.w = 0.707;
+                xRot = float.Parse(endEffectorFieldList[3].text);
+                yRot = float.Parse(endEffectorFieldList[4].text);
+                zRot = float.Parse(endEffectorFieldList[5].text);
+                UnityEngine.Quaternion rotation =  UnityEngine.Quaternion.Euler(xRot,yRot,zRot);
+                message.orientation.x  = rotation.x;
+                message.orientation.y  = rotation.y;
+                message.orientation.z  = rotation.z;
+                message.orientation.w  = rotation.w;
                 Publish(message);
             }
             
         }
-
-        // private void UpdateJointState(int i)
-        // {
-
-        //     JointStateReaders[i].Read(
-        //         out message.name[i],
-        //         out float position,
-        //         out float velocity,
-        //         out float effort);
-
-        //     message.position[i] = position;
-        //     message.velocity[i] = velocity;
-        //     message.effort[i] = effort;
-        // }
 
 
     }
