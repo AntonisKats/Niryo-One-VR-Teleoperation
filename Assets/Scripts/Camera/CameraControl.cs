@@ -70,10 +70,10 @@ public class CameraControl : MonoBehaviour
                 yaw = mouseDistance - transform.rotation.y ;
                 yaw = yaw / 2.0f;
                 
-                transform.rotation =  Quaternion.Euler(startXAngle,yaw,0.0f);
+                transform.rotation =  Quaternion.Euler(startXAngle,180 - yaw,0.0f);
 
                 //Set position
-                cameraZ = - cameraRadius * Mathf.Cos(-yaw*Mathf.Deg2Rad);
+                cameraZ = cameraRadius * Mathf.Cos(-yaw*Mathf.Deg2Rad);
                 cameraX = cameraRadius * Mathf.Sin(-yaw*Mathf.Deg2Rad);
                 transform.position = new Vector3(cameraX,transform.position.y,cameraZ);
 
