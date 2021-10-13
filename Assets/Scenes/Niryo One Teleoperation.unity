@@ -7144,7 +7144,7 @@ MonoBehaviour:
   SecondsTimeout: 10
   Serializer: 1
   protocol: 0
-  RosBridgeServerUrl: ws://192.168.1.103:9090
+  RosBridgeServerUrl: ws://150.140.151.147:9090
 --- !u!114 &763613975
 MonoBehaviour:
   m_ObjectHideFlags: 0
