@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.44657868, g: 0.49641263, b: 0.57481706, a: 1}
+  m_IndirectSpecularColor: {r: 0.4465785, g: 0.49641252, b: 0.574817, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -595,7 +595,20 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 66106225}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 763613985}
+        m_TargetAssemblyTypeName: RosSharp.RosBridgeClient.GripperCommandPublisher,
+          Assembly-CSharp
+        m_MethodName: CloseGripper
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &66106225
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7108,6 +7121,7 @@ GameObject:
   - component: {fileID: 763613982}
   - component: {fileID: 763613983}
   - component: {fileID: 763613984}
+  - component: {fileID: 763613985}
   m_Layer: 0
   m_Name: ROS Connector
   m_TagString: Untagged
@@ -7339,6 +7353,19 @@ MonoBehaviour:
   Topic: /left_usb_cam/image_raw/compressed
   TimeStep: 0
   meshRenderer: {fileID: 488798513}
+--- !u!114 &763613985
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 763613972}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 09b0749b0db0ee1498195b48a8cc8d4e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Topic: /niryo_one/tool_action/goal
 --- !u!1 &771767153
 GameObject:
   m_ObjectHideFlags: 0
@@ -12116,7 +12143,20 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1239834670}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 763613985}
+        m_TargetAssemblyTypeName: RosSharp.RosBridgeClient.GripperCommandPublisher,
+          Assembly-CSharp
+        m_MethodName: OpenGripper
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1239834670
 MonoBehaviour:
   m_ObjectHideFlags: 0
