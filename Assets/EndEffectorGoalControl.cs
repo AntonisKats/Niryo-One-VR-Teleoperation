@@ -22,10 +22,10 @@ namespace RosSharp.RosBridgeClient
         // Update is called once per frame
         void Update()
         {
-            Debug.Log(endEffectorControlToggle.isOn);
+            //Debug.Log(endEffectorControlToggle.isOn);
             if(endEffectorControlToggle.isOn){
                 ShowChildren();
-                Debug.Log("Sphere appears");
+                //Debug.Log("Sphere appears");
                 // Adjust the coordinate system Unity - ROS
 
                 //Get Values
@@ -45,7 +45,7 @@ namespace RosSharp.RosBridgeClient
             }
             else{
                 HideChildren();
-                Debug.Log("Sphere disappears");
+                //Debug.Log("Sphere disappears");
                 transform.position = toolLinkTransform.position;
                 transform.rotation = toolLinkTransform.rotation;
             }

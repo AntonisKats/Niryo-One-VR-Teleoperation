@@ -8,12 +8,12 @@ TagManager:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - Front Camera Layer
+  - Left Camera Layer
   - Water
   - UI
   - Unity Camera Layer
   - Cameras Common Layer
-  - 
+  - Right Camera Layer
   - 
   - 
   - 
