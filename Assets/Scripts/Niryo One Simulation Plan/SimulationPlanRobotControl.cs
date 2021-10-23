@@ -13,7 +13,7 @@ public class SimulationPlanRobotControl : MonoBehaviour
     public List<JointStateWriter> JointWriters;
     public List<JointStateReader> JointReaders;
     private int jointNum = 6;
-    private float displayTimeStep = 0.1f;
+    private float displayTimeStep = 0.4f;
     private int planExecutedNum = 0;
     private IEnumerator coroutine;
     Renderer test;
