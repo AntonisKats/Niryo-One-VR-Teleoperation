@@ -14,7 +14,7 @@ public class TransformPositionControl : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Debug.Log(originalLocation);
+        //Debug.Log(originalLocation);
         if(Input.GetKeyDown("l")){
             originalLocation[0] = 140;
             transform.position = originalLocation;
