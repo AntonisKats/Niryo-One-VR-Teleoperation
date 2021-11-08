@@ -8,6 +8,7 @@ public class EndEffectorControlToggle : MonoBehaviour
     public List<InputField> inputFieldList;
     public Toggle jointControlToggle; 
     public Toggle endEffectorControlToggle; 
+    public Toggle pickAndPlaceToggle;
     // Start is called before the first frame update
     void Start()
     {
@@ -21,6 +22,11 @@ public class EndEffectorControlToggle : MonoBehaviour
 
         if(jointControlToggle.isOn)endEffectorControlToggle.interactable = false;
         else endEffectorControlToggle.interactable = true;
+
+        if(pickAndPlaceToggle.isOn)endEffectorControlToggle.interactable = false;
+        else endEffectorControlToggle.interactable = true;
+
+
     }
 
     void DisablePanel(){

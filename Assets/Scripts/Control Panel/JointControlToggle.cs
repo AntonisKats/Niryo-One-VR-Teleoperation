@@ -9,6 +9,7 @@ public class JointControlToggle : MonoBehaviour
     public List<InputField> inputFieldList;
     public Toggle jointControlToggle; 
     public Toggle endEffectorControlToggle; 
+    public Toggle pickAndPlaceToggle;
     // Start is called before the first frame update
     void Start()
     {
@@ -19,9 +20,12 @@ public class JointControlToggle : MonoBehaviour
     void Update()
     {
         if(jointControlToggle.isOn)EnablePanel();
-        else DisablePanel();
+        //else DisablePanel();
 
         if(endEffectorControlToggle.isOn)jointControlToggle.interactable = false;
+        else jointControlToggle.interactable = true;
+
+        if(pickAndPlaceToggle.isOn)jointControlToggle.interactable = false;
         else jointControlToggle.interactable = true;
     }
 
