@@ -20,7 +20,7 @@ public class JointControlToggle : MonoBehaviour
     void Update()
     {
         if(jointControlToggle.isOn)EnablePanel();
-        //else DisablePanel();
+        else DisablePanel();
 
         if(endEffectorControlToggle.isOn)jointControlToggle.interactable = false;
         else jointControlToggle.interactable = true;
